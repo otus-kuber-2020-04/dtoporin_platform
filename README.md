@@ -14,3 +14,30 @@ etcd, kube-apiserver, kube-controller-manager, kube-scheduler - kubelet запу
 #7 Собран образ frontend из HipsterShop
 #8 Запущен образ ad-hoc 
 #9* Не запустился из-за отстутствия переменной окружения "environment variable "PRODUCT_CATALOG_SERVICE_ADDR" not set"
+
+
+ДЗ#2
+Kubernetes controllers. ReplicaSet, Deployment, DaemonSet
+#1 Создан манифест  frontend-replicaset.yaml 
+#2 Не запускался т.к. нехватало селектора - добвил
+#3 обновление ReplicaSet не повлекло обновление запущенных pod т.к. replicaset controller не умеет рестартовать запущенные поды при обновлении шаблона, заупщенная версия контейнеров оказалась старой
+#4 Аналог blue-green:
+  strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 100%
+        maxUnavailable: 0 
+
+#5 Reverse Rolling Update:
+  strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 0
+
+#6 задание ** 
+   Добавлен параметр 
+    tolerations:
+          - key: node-role.kubernetes.io/master
+            effect: NoSchedule
+   Который дает возможность запуска подов на мастер-нодах
