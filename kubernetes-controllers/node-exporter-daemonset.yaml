@@ -17,8 +17,7 @@ spec:
          prometheus.io/port: "9100"
     spec:
       tolerations:
-      - key: node-role.kubernetes.io/master
-        effect: NoSchedule
+      - operator: "Exists"
       containers:
         - name: node-exporter
           image: quay.io/prometheus/node-exporter:v0.18.1
