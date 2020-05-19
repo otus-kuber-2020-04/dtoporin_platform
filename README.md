@@ -37,7 +37,6 @@ Kubernetes controllers. ReplicaSet, Deployment, DaemonSet
 
 #6 задание ** 
    Добавлен параметр 
-    tolerations:
-          - key: node-role.kubernetes.io/master
-            effect: NoSchedule
+     tolerations:
+           - operator: "Exists"
    Который дает возможность запуска подов на мастер-нодах
