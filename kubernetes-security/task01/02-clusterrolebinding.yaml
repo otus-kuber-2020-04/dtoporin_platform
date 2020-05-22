@@ -5,7 +5,8 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: bob
-  apiGroup: rbac.authorization.k8s.io
+  namespace: default
+  apiGroup: ""
 roleRef:
   kind: ClusterRole
   name: cluster-admin
