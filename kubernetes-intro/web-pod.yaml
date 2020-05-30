@@ -8,6 +8,15 @@ spec:
   containers:
   - name: web
     image: dtoporin/my-web-app:1.0
+    readinessProbe:
+      httpGet:
+        path: /index.html
+        port: 80
+    livenessProbe:
+      tcpSocket:
+         port: 8000
+      initialDelaySeconds: 15
+      periodSeconds: 20
     resources:
       limits:
         memory: "128Mi"
