@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: shop.35.184.239.21.nip.io
+spec:
+  secretName: shop.i35.184.239.21.nip.io
+  issuerRef:
+    name: letsencrypt
+  commonName: shop.35.184.239.21.nip.io
+  dnsNames:
+  - shop.35.184.239.21.nip.io

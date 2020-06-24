@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: chartmuseum.35.188.146.9.nip.io
+spec:
+  secretName: chartmuseum.35.188.146.9.nip.io
+  issuerRef:
+    name: letsencrypt
+  commonName: chartmuseum.35.188.146.9.nip.io
+  dnsNames:
+  - chartmuseum.35.188.146.9.nip.io
