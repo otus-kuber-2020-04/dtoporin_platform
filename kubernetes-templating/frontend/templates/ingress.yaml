@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
       - shop.35.184.239.21.nip.io
-    secretName:
+    secretName: shop.35.184.239.21.nip.io
   rules:
   - host: shop.35.184.239.21.nip.io
     http:
@@ -17,5 +17,5 @@ spec:
       - path: /
         backend:
           serviceName: frontend
-          servicePort: {{ .Values.ingress.servicePort }}
+          servicePort: 80
 

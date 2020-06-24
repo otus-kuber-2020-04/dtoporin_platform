@@ -1,4 +1,4 @@
-local kube = import "https://raw.githubusercontent.com/bitnami-labs/kube-libsonnet/master/kube.libsonnet";
+local kube = import "https://github.com/bitnami-labs/kube-libsonnet/raw/52ba963ca44f7a4960aeae9ee0fbee44726e481f/kube.libsonnet";
 
 local common(name) = {
 
@@ -56,7 +56,7 @@ local common(name) = {
             containers_+: {
               common+: {
                 name: "server",
-                image: "avtandilko/paymentservice:latest",
+                image: "gcr.io/google-samples/microservices-demo/paymentservice:v0.1.3",
               },
             },
           },
@@ -73,7 +73,7 @@ local common(name) = {
             containers_+: {
               common+: {
                 name: "server",
-                image: "avtandilko/shippingservice:latest",
+                image: "gcr.io/google-samples/microservices-demo/shippingservice:v0.1.3",
               },
             },
           },
