@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: harbor.35.202.243.211.nip.io
+spec:
+  secretName: harbor.35.202.243.211.nip.io
+  issuerRef:
+    name: letsencrypt
+  commonName: harbor.35.202.243.211.nip.io
+  dnsNames:
+  - harbor.35.202.243.211.nip.io
